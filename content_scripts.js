@@ -5,6 +5,7 @@ window.onload = function() {
    //sendResponse(inputCommentElementValue);
 
    const displayCommentElement = document.querySelector("input");
+   displayCommentElement.focus();
    displayCommentElement.value = msg.myMessage;
    displayCommentElement.form.submit();
  
