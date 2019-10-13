@@ -4,15 +4,18 @@ window.onload = function() {
    //displayComment(inputCommentElementValue);
    //sendResponse(inputCommentElementValue);
 
-   const displayCommentElement = document.querySelector("input");
-   displayCommentElement.focus();
-   displayCommentElement.value = msg.myMessage;
-   displayCommentElement.form.submit();
- 
-   let displayCommentInputEventMethod = displayCommentElement.oninput;
-//   displayCommentElement.submit();
-   sendResponse({responseMsg: msg.myMessage, responseNode: "Inputイベントリスナー: " +  Object.prototype.toString.call(displayCommentInputEventMethod)});
-   return true;
+      const displayCommentElement = document.querySelector("input");
+      displayCommentElement.focus();
+      displayCommentElement.value = msg.myMessage;
+      displayCommentElement.focus();
+      document.dispatchEvent( new KeyboardEvent( "keydown",{key: "a" })) ;
+
+      document.dispatchEvent( new KeyboardEvent( "keydown",{key: "Enter" })) ;
+      //      sendEnterKey(displayCommentElement);
+      //      displayCommentElement.form.submit();
+      //      displayCommentElement.submit();
+      sendResponse({responseMsg: msg.myMessage});
+      return true;
    });
 
    function displayComment(msg) {
@@ -25,4 +28,16 @@ window.onload = function() {
       displayCommentElementArray[0].value = msg;
       displayCommentElementArray[0].form.submit();
    };
+
+   function sendEnterKey(eventDispacher) {
+      enterKeyEvent = new KeyboardEvent('keyup',{key: "Enter", code: "Enter"});
+      var canceled = !body.dispatchEvent(enterKeyEvent);
+      if(canceled) {
+            // A handler called preventDefault
+            alert("canceled");
+      } else {
+            // None of the handlers called preventDefault
+      alert("not canceled");
+      }
+   }
 };

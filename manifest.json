@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Automatic Lyric Sender for Pococha TestPage",
     "description": "",
-    "version": "0.1.0.807",
+    "version": "0.1.0.815",
     "icons": {
         "32": "icon_32.png",
         "48": "icon_48.png",

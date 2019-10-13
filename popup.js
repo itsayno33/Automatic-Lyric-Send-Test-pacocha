@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function() {
          chrome.tabs.sendMessage(tabss[0].id, {myMessage: msgText},
             function (msg) {
                document.getElementById("result").innerHTML = msg.responseMsg;
-               document.getElementById("check").innerHTML = msg.responseNode;
                return true;
             }
          );
